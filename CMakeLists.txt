@@ -3,7 +3,7 @@ project(benchmark VERSION 0.1.0 LANGUAGES CXX CUDA)
 
 set(CMAKE_CXX_STANDARD 17)
 
-list(APPEND CMAKE_CXX_FLAGS " -g -O3 ")
+list(APPEND CMAKE_CXX_FLAGS " -g -O3 -fopenmp ")
 
 find_package(Vulkan REQUIRED)
 find_package(OpenCV REQUIRED)

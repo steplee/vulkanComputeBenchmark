@@ -16,7 +16,7 @@ void run_cpu4_1(Timer& t, int N, int W, int H, int C, float *outHost, const floa
 constexpr int W = 512;
 constexpr int H = 512;
 constexpr int C = 1;
-constexpr int N = 10000;
+constexpr int N = 1000;
 
 
 int main(int argc, char** argv) {
@@ -72,6 +72,7 @@ int main(int argc, char** argv) {
 	cv::Mat matVlkn { H, W, CV_32FC1, outVlkn }; cv::imwrite("outVlkn.png", matVlkn);
 	cv::Mat matCuda { H, W, CV_32FC1, outCuda }; cv::imwrite("outCuda.png", matCuda);
 	cv::Mat matCpu1 { H, W, CV_32FC1, outCpu1 }; cv::imwrite("outCpu1.png", matCpu1);
+	cv::Mat matCpu4 { H, W, CV_32FC1, outCpu4 }; cv::imwrite("outCpu4.png", matCpu4);
 
 	free(outVlkn);
 	free(outCuda);
