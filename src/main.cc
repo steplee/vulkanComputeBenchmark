@@ -16,7 +16,7 @@ void run_cpu4_1(Timer& t, int N, int W, int H, int C, float *outHost, const floa
 constexpr int W = 512;
 constexpr int H = 512;
 constexpr int C = 1;
-constexpr int N = 1000;
+constexpr int N = 10000;
 
 
 int main(int argc, char** argv) {
