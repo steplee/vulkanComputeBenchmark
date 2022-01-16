@@ -11,8 +11,9 @@
 ## Results
 #####  On laptop (i7-7700HQ @ 2.8Ghz, GeForce GTX 1060 + Cuda 11.4):
 #####  On desktop (i7-4770K @ 3.5Ghz, GeForce GTX 1070 Ti + Cuda 10.2):
-<pre> - Task <font color="#FFC0CB">    cpu_Blur</font> took <font color="#4682B4">   12.659s </font> (avg <font color="#FFA500">    6.330ms</font> ± <font color="#90EE90">  200.135ms</font>)
- - Task <font color="#FFC0CB">    vlknBlur</font> took <font color="#4682B4">  114.391ms</font> (avg <font color="#FFA500">  114.391μs</font> ± <font color="#90EE90">    3.616ms</font>)
- - Task <font color="#FFC0CB">    cudaBlur</font> took <font color="#4682B4">  101.076ms</font> (avg <font color="#FFA500">  101.076μs</font> ± <font color="#90EE90">    3.195ms</font>)
-</pre>
+<pre>
+ - Task <font color="#FFC0CB">    cpu4Blur</font> took <font color="#4682B4">   61.633s </font> (avg <font color="#FFA500">    6.163ms</font> ± <font color="#90EE90">  616.300ms</font>)
+ - Task <font color="#FFC0CB">    cpu1Blur</font> took <font color="#4682B4">   65.256s </font> (avg <font color="#FFA500">    6.526ms</font> ± <font color="#90EE90">  652.531ms</font>)
+ - Task <font color="#FFC0CB">    vlknBlur</font> took <font color="#4682B4">    1.068s </font> (avg <font color="#FFA500">  106.836μs</font> ± <font color="#90EE90">   10.683ms</font>)
+ - Task <font color="#FFC0CB">    cudaBlur</font> took <font color="#4682B4">  866.306ms</font> (avg <font color="#FFA500">   86.631μs</font> ± <font color="#90EE90">    8.663ms</font>)</pre>
  - Vulkan was about as fast as CUDA! If the CUDA impl were to gather to shared memory it'd be several times faster. Not sure if vulkan supports local memory.

@@ -16,6 +16,7 @@ void run_cpu4_1(Timer& t, int N, int W, int H, int C, float *outHost, const floa
 constexpr int W = 512;
 constexpr int H = 512;
 constexpr int C = 1;
+constexpr int N = 10000;
 
 
 int main(int argc, char** argv) {
@@ -56,13 +57,14 @@ int main(int argc, char** argv) {
 	{
 		Timer cudaTimer { "cudaBlur" };
 		Timer vlknTimer { "vlknBlur" };
-		Timer cpu_Timer { "cpu_Blur" };
+		Timer cpu1Timer { "cpu1Blur" };
+		Timer cpu4Timer { "cpu4Blur" };
 		for (int i=0; i<1; i++) {
 		//for (int i=0; i<10; i++) {
-			run_cpu1_1(cpu_Timer, 1000, W,H,C, outCpu1, in);
-			run_cpu4_1(cpu_Timer, 1000, W,H,C, outCpu4, in);
-			run_vlkn_1(vlknTimer, 1000, W,H,C, outVlkn, in);
-			run_cuda_1(cudaTimer, 1000, W,H,C, outCuda, in);
+			run_cpu1_1(cpu1Timer, N, W,H,C, outCpu1, in);
+			run_cpu4_1(cpu4Timer, N, W,H,C, outCpu4, in);
+			run_vlkn_1(vlknTimer, N, W,H,C, outVlkn, in);
+			run_cuda_1(cudaTimer, N, W,H,C, outCuda, in);
 		}
 	}
 

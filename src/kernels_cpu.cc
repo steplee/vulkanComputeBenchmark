@@ -30,7 +30,7 @@ void run_cpu4_1(Timer& t, int N, int W, int H, int C, float *outHost, const floa
 	{
 		TimerMeasurement<> tm(t, N);
 		for (int i=0; i<N; i++) {
-			#pragma omp parallel for schedule(static, 4)
+			#pragma omp parallel for schedule(static, 4) num_threads(4)
 			for (int y=0; y<H; y++)
 			for (int x=0; x<W; x++) {
 				int c = 0;
