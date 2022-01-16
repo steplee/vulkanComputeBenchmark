@@ -7,7 +7,7 @@ list(APPEND CMAKE_CXX_FLAGS " -g -O3 ")
 
 find_package(Vulkan REQUIRED)
 find_package(OpenCV REQUIRED)
-3find_package(Fmt REQUIRED)
+find_package(Fmt REQUIRED)
 
 option(USE_VALIDATION OFF)
 if (USE_VALIDATION)
@@ -34,7 +34,7 @@ target_link_libraries(runBench
     Vulkan::Vulkan
 	#kompute::kompute
 	glfw
-	#fmt::fmt
+	fmt::fmt
 	opencv_imgcodecs
 	opencv_core
 	)
